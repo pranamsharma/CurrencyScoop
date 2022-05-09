@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/drawable/border_line_list.xml" value="0.191" />
+        <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/drawable/ic_favorite_24.xml" value="0.191" />
+        <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/activity_convert.xml" value="0.23489583333333333" />
+        <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/activity_currency_list.xml" value="0.27447916666666666" />
+        <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/activity_currency_rates.xml" value="0.27447916666666666" />
+        <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/activity_main.xml" value="0.2604166666666667" />
+        <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/currency_list_row.xml" value="0.27447916666666666" />
+        <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/currency_rates_row.xml" value="0.140625" />
+        <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/my_favourites_fragment.xml" value="0.2234375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
