@@ -15,7 +15,7 @@ class FavouritesViewModel(application: Application) : AndroidViewModel(applicati
 
 
     val allFavourites : LiveData<List<FavouritesEntity>>
-    val repository : FavouritesRepository
+    private val repository : FavouritesRepository
 
     init {
         val dao = FavouritesDatabase.getDatabase(application).getFavouritesDao()
@@ -24,9 +24,12 @@ class FavouritesViewModel(application: Application) : AndroidViewModel(applicati
     }
 
 
-    fun deleteFavourites (favouritesEntity: FavouritesEntity) = viewModelScope.launch(Dispatchers.IO) {
-        repository.delete(favouritesEntity)
-    }
+    fun deleteFavourites (favouritesEntity: FavouritesEntity)=
+
+         viewModelScope.launch(Dispatchers.IO) {
+            repository.delete(favouritesEntity)
+        }
+
 
     fun addFavourites(favouritesEntity: FavouritesEntity) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(favouritesEntity)

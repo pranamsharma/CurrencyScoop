@@ -9,7 +9,7 @@ import com.app.currencyscoop.R
 import com.app.currencyscoop.model.CurrencyRatesModel
 import kotlinx.android.synthetic.main.currency_rates_row.view.*
 
-class CurrencyRatesAdapter(val activity: Activity,val addFavouritesInterface: AddFavouritesInterface):RecyclerView.Adapter<CurrencyRatesAdapter.MyViewHolder>() {
+class CurrencyRatesAdapter(val activity: Activity, private val addFavouritesInterface: AddFavouritesInterface):RecyclerView.Adapter<CurrencyRatesAdapter.MyViewHolder>() {
     private var currencyList:List<CurrencyRatesModel>?=null
 
      fun setCurrencyList(currencyList:ArrayList<CurrencyRatesModel>)

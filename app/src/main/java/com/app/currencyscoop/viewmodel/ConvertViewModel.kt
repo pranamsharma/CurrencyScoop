@@ -16,10 +16,7 @@ import retrofit2.Response
 
 class ConvertViewModel:ViewModel() {
 
-    lateinit var convertAmountResponse: MutableLiveData<MainCurrencyConvertModel>
-    init {
-        convertAmountResponse= MutableLiveData()
-    }
+    var convertAmountResponse: MutableLiveData<MainCurrencyConvertModel> = MutableLiveData()
 
     fun getLiveDataObserver(): MutableLiveData<MainCurrencyConvertModel> {
         return convertAmountResponse
@@ -31,9 +28,8 @@ class ConvertViewModel:ViewModel() {
         val retrofitService=retroInstance.create(RetrofitService::class.java)
         val call=retrofitService.getCurrencyConvertValue(api_key,from,to,amount)
 
-        Log.e("checkk",call.request().toString())
+        Log.e("check",call.request().toString())
         call.enqueue(object : Callback<MainCurrencyConvertModel>
-
         {
             override fun onResponse(
                 call: Call<MainCurrencyConvertModel>,
@@ -43,7 +39,7 @@ class ConvertViewModel:ViewModel() {
                 if (response.isSuccessful) {
 
                     AppUtils.alertSimple(context, response.body()!!.meta.code.toString())
-                    Log.e("ratesssss", response.body()!!.response.toString())
+                    Log.e("rates", response.body()!!.response.toString())
                     convertAmountResponse.postValue(response.body())
                 }
                 else
@@ -54,7 +50,7 @@ class ConvertViewModel:ViewModel() {
 
             override fun onFailure(call: Call<MainCurrencyConvertModel>, t: Throwable) {
                 AppUtils.alertSimple(context,t.message.toString())
-                Log.e("failuress",t.message.toString())
+                Log.e("failures",t.message.toString())
                 convertAmountResponse.postValue(null)
             }
         })

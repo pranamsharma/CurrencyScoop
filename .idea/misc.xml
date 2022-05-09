@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../Library/Android/sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.1" />
         <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/drawable/border_line_list.xml" value="0.191" />
         <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/drawable/ic_favorite_24.xml" value="0.191" />
         <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/activity_convert.xml" value="0.23489583333333333" />
@@ -12,6 +13,8 @@
         <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/currency_list_row.xml" value="0.27447916666666666" />
         <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/currency_rates_row.xml" value="0.140625" />
         <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/my_favourites_fragment.xml" value="0.2234375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/my_favourites_activity.xml" value="0.1" />
       </map>
     </option>
   </component>

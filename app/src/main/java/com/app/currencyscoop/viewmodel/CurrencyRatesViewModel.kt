@@ -13,10 +13,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class CurrencyRatesViewModel:ViewModel() {
-      var currencyRatesList: MutableLiveData<MainCurrencyRatesModel>
-    init {
-        currencyRatesList= MutableLiveData()
-    }
+      var currencyRatesList: MutableLiveData<MainCurrencyRatesModel> = MutableLiveData()
 
     fun getLiveDataObserver(): MutableLiveData<MainCurrencyRatesModel> {
         return currencyRatesList

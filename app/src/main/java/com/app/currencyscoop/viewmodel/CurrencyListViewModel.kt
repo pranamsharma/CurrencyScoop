@@ -17,10 +17,7 @@ import retrofit2.Response
 
 class CurrencyListViewModel:ViewModel() {
 
-    lateinit var liveDataList: MutableLiveData<MainCurrencyListModel>
-    init {
-        liveDataList= MutableLiveData()
-    }
+    var liveDataList: MutableLiveData<MainCurrencyListModel> = MutableLiveData()
 
     fun getLiveDataObserver():MutableLiveData<MainCurrencyListModel>{
         return liveDataList

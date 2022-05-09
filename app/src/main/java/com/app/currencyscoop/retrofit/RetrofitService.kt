@@ -14,12 +14,17 @@ interface RetrofitService {
     fun getCurrencyList():Call<MainCurrencyListModel>
 
     @GET("latest?api_key=422ffc3866e625a5989e3fac8a2486e7&base")
-    fun getCurrencyRates(@Query("base") currency: String): Call<MainCurrencyRatesModel>
+    fun getCurrencyRates(
+        @Query("base") currency: String
+    ): Call<MainCurrencyRatesModel>
 
-    //https://api.currencyscoop.com/v1/?api_key=422ffc3866e625a5989e3fac8a2486e7&from=INR&to=JPY&amount=100
+
    @GET("convert?")
     fun getCurrencyConvertValue(
         @Query("api_key") api_key: String,
-        @Query("from") from: String,@Query("to") to: String,@Query("amount") amount: String): Call<MainCurrencyConvertModel>
+        @Query("from") from: String,
+        @Query("to") to: String,
+        @Query("amount") amount: String
+   ): Call<MainCurrencyConvertModel>
 
 }

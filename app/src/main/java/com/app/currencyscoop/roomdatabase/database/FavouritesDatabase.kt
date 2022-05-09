@@ -10,7 +10,7 @@ import com.app.currencyscoop.roomdatabase.entity.BaseCurrencyEntity
 import com.app.currencyscoop.roomdatabase.entity.FavouritesEntity
 
 
-@Database(entities = arrayOf(FavouritesEntity::class,BaseCurrencyEntity::class), version = 1, exportSchema = false)
+@Database(entities = [FavouritesEntity::class, BaseCurrencyEntity::class], version = 1, exportSchema = false)
 abstract class FavouritesDatabase : RoomDatabase() {
 
     abstract fun getFavouritesDao(): FavouritesDao

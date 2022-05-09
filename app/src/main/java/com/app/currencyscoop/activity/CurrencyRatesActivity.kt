@@ -29,7 +29,6 @@ lateinit var currencyRatesAdapter: CurrencyRatesAdapter
 
     lateinit var viewModal: FavouritesViewModel
     lateinit var bcdViewModel: BaseCurrencyDBViewModel
-    // lateinit var currencyModel:CurrencyModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -9,8 +9,11 @@ class RetroInstance {
         val BASE_URL="https://api.currencyscoop.com/v1/" //currencies?
         fun getRetroInstance():Retrofit{
 
-            return  Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())
-                .build()
+            return  Retrofit.Builder()
+                   .baseUrl(BASE_URL)
+                   .addConverterFactory(GsonConverterFactory.create())
+                   .build()
+
         }
     }
 

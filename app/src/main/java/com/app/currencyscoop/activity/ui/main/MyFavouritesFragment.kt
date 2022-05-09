@@ -61,7 +61,7 @@ class MyFavouritesFragment : Fragment() {
                 viewModel.deleteFavourites(favouritesEntity)
                // myFavouritesAdapter!!.notifyItemRemoved(position)
                 myFavouritesAdapter!!.notifyDataSetChanged()
-                Toast.makeText(activity, "${favouritesEntity.currencyCode} Deleted", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, "${favouritesEntity.currencyCode} Deleted", Toast.LENGTH_SHORT).show()
 
             }
 

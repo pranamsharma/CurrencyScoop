@@ -9,7 +9,7 @@ import com.app.currencyscoop.R
 import com.app.currencyscoop.roomdatabase.entity.FavouritesEntity
 import kotlinx.android.synthetic.main.currency_rates_row.view.*
 
-class MyFavouritesAdapter(val activity: Context,val deleteFavouritesInterface: DeleteFavouritesInterface):RecyclerView.Adapter<MyFavouritesAdapter.MyViewHolder>() {
+class MyFavouritesAdapter(val activity: Context, private val deleteFavouritesInterface: DeleteFavouritesInterface):RecyclerView.Adapter<MyFavouritesAdapter.MyViewHolder>() {
     private var currencyList:List<FavouritesEntity>?=null
 
      fun setCurrencyList(currencyList:List<FavouritesEntity>)

@@ -56,7 +56,7 @@ class ConvertActivity : AppCompatActivity() {
 
         convert_btn.setOnClickListener {
 
-            if (amount_et.text.length==0) amount_et.error="Enter Amount!"
+            if (amount_et.text.isEmpty()) amount_et.error="Enter Amount!"
             else
             getAmount(resources.getString(R.string.api_key),from_currency,to_currency,amount_et.text.toString())
         }

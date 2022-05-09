@@ -38,7 +38,7 @@ class CurrencyListAdapter(val activity: Activity):RecyclerView.Adapter<CurrencyL
     }
 
     override fun getItemCount(): Int {
-        if(currencyList == null)return 0
+        if(currencyList == null) return 0
         else return currencyList?.size!!
     }
 
