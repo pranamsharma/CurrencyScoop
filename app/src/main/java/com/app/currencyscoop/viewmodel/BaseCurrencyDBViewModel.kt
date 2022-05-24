@@ -27,8 +27,7 @@ class BaseCurrencyDBViewModel(
 
 
     fun deleteBaseCurrencyData(baseCurrencyEntity: BaseCurrencyEntity) =
-        viewModelScope.launch(
-        Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
         repository.delete(baseCurrencyEntity)
     }
 

@@ -37,9 +37,6 @@ class ConvertViewModel:ViewModel() {
             ) {
 
                 if (response.isSuccessful) {
-
-                    AppUtils.alertSimple(context, response.body()!!.meta.code.toString())
-                    Log.e("rates", response.body()!!.response.toString())
                     convertAmountResponse.postValue(response.body())
                 }
                 else

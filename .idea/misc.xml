@@ -13,8 +13,22 @@
         <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/currency_list_row.xml" value="0.27447916666666666" />
         <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/currency_rates_row.xml" value="0.140625" />
         <entry key="..\:/Freelancer projects/_2022projects/may/CurrencyScoop/app/src/main/res/layout/my_favourites_fragment.xml" value="0.2234375" />
+        <entry key="app/src/main/res/drawable-v24/corner_round.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/corner_round_edittext.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/border_line_list.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/ic_convert.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/ic_favorite_24.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/ic_list.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/round_button.xml" value="0.143" />
+        <entry key="app/src/main/res/layout/activity_convert.xml" value="0.2768124303073748" />
+        <entry key="app/src/main/res/layout/activity_currency_list.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_currency_rates.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/currency_list_row.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/currency_rates_row.xml" value="0.23214285714285715" />
         <entry key="app/src/main/res/layout/my_favourites_activity.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/my_favourites_fragment.xml" value="0.15070921985815602" />
       </map>
     </option>
   </component>

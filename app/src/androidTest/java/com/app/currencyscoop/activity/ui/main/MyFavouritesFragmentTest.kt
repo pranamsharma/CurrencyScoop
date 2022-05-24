@@ -3,8 +3,10 @@ package com.app.currencyscoop.activity.ui.main
 import android.os.Bundle
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.app.currencyscoop.R
 import com.app.currencyscoop.roomdatabase.entity.FavouritesEntity
@@ -21,7 +23,7 @@ class MyFavouritesFragmentTest{
         val scenario = launchFragmentInContainer<MyFavouritesFragment>()
         scenario.recreate()
         scenario.onFragment { fragment ->
-            onView(withId(R.layout.my_favourites_fragment))
+            onView(withId(R.layout.my_favourites_fragment)).perform()
         }
     }
 }

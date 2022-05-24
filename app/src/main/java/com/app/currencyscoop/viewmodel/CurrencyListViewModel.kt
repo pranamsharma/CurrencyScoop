@@ -30,7 +30,7 @@ class CurrencyListViewModel:ViewModel() {
         val retrofitService=retroInstance.create(RetrofitService::class.java)
         val call=retrofitService.getCurrencyList()
 
-        Log.e("sadasdasdssada",call.request().toString())
+        Log.e("check",call.request().toString())
         call.enqueue(object : Callback<MainCurrencyListModel>
 
         {
@@ -39,19 +39,16 @@ class CurrencyListViewModel:ViewModel() {
                 response: Response<MainCurrencyListModel>
             ) {
                 if (response.isSuccessful) {
-                    AppUtils.alertSimple(context, response.body()!!.meta.code.toString())
-                    Log.e("dadadadad", response.body()!!.response.fiats.toString())
+                    Log.e("success", response.body()!!.response.fiats.toString())
                     liveDataList.postValue(response.body())
                 }else
                 {
-                    AppUtils.alertSimple(context, response.body()!!.meta.code.toString())
-
                     AppUtils.alertError(context,response.body()!!.meta.code.toString(),viewModel)
                 }
             }
 
             override fun onFailure(call: Call<MainCurrencyListModel>, t: Throwable) {
-                Log.e("failuress",t.message.toString())
+                Log.e("failure",t.message.toString())
                 liveDataList.postValue(null)
             }
         })

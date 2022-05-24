@@ -25,7 +25,7 @@ class CurrencyRatesViewModel:ViewModel() {
         val retrofitService=retroInstance.create(RetrofitService::class.java)
         val call=retrofitService.getCurrencyRates(base_currency)
 
-        Log.e("sadasdasdssada",call.request().toString())
+        Log.e("check",call.request().toString())
         call.enqueue(object : Callback<MainCurrencyRatesModel>
 
         {
@@ -34,7 +34,6 @@ class CurrencyRatesViewModel:ViewModel() {
                 response: Response<MainCurrencyRatesModel>
             ) {
                 if (response.isSuccessful) {
-                    AppUtils.alertSimple(context, response.body()!!.meta.code.toString())
                     currencyRatesList.postValue(response.body())
                 }
 
@@ -44,7 +43,7 @@ class CurrencyRatesViewModel:ViewModel() {
             }
 
             override fun onFailure(call: Call<MainCurrencyRatesModel>, t: Throwable) {
-                Log.e("failuress",t.message.toString())
+                Log.e("failure",t.message.toString())
                 currencyRatesList.postValue(null)
                 AppUtils.alertErrorCurrencyRates(base_currency, context, t.message.toString(), viewModel)
             }

@@ -25,13 +25,13 @@ class FavouritesViewModel(application: Application) : AndroidViewModel(applicati
 
 
     fun deleteFavourites (favouritesEntity: FavouritesEntity)=
-
          viewModelScope.launch(Dispatchers.IO) {
             repository.delete(favouritesEntity)
         }
 
 
-    fun addFavourites(favouritesEntity: FavouritesEntity) = viewModelScope.launch(Dispatchers.IO) {
+    fun addFavourites(favouritesEntity: FavouritesEntity) =
+        viewModelScope.launch(Dispatchers.IO) {
         repository.insert(favouritesEntity)
     }
 }

@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_margin="10dp"
-    android:background="@drawable/border_line_list"
-    android:layout_height="40dp">
-
-
-    <TextView
-        android:id="@+id/currencyRatesTv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="15dp"
-        android:textColor="@color/black"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/add_fav_ib"
-        android:textSize="15sp" />
-
-<ImageButton
-    android:id="@+id/add_fav_ib"
-    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:src="@drawable/ic_favourite_add"
-    android:background="@android:color/transparent"
-    android:layout_centerVertical="true"
-    android:layout_marginRight="10dp"
-    android:layout_alignParentRight="true"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/light_blue"
+    android:padding="5dp"
+    >
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="40dp">
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/currencyRatesTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/add_fav_ib"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/add_fav_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_favourite_add" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

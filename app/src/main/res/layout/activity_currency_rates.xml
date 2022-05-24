@@ -5,14 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/dark_blue"
     tools:context=".activity.CurrencyRatesActivity">
 
     <RelativeLayout
         android:id="@+id/action_bar_rl"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@color/teal_200"
+        android:background="@color/dark_blue"
         >
+
+        <ImageButton
+            android:id="@+id/back_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@android:color/transparent"
+            android:onClick="backOperation"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
             android:id="@+id/title_tv"
@@ -20,13 +34,14 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/back_ib"
             android:text="Currency Rates"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <ImageButton
-            android:id="@+id/my_favourites_ib"
+            android:id="@+id/currency_list_ib"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_centerVertical="true"
@@ -34,8 +49,7 @@
 
             android:layout_toLeftOf="@+id/convert_ib"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_favorite_24" />
-
+            android:src="@drawable/ic_list" />
         <ImageButton
             android:id="@+id/convert_ib"
             android:layout_width="wrap_content"
@@ -48,36 +62,86 @@
 
 
     </RelativeLayout>
-    <TextView
-        android:id="@+id/basecurrency_tv"
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textStyle="bold"
-        android:textSize="16sp"
         android:layout_below="@+id/action_bar_rl"
-        android:textAlignment="center"
-         />
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:layout_centerInParent="true"
-        android:visibility="gone"
-          />
+            <TextView
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/currencyListRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/basecurrency_tv"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+                android:id="@+id/myfav_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/my_favourites"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/favouriteListRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/myfav_tv"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+
+                />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/teal_700"
+                android:layout_below="@+id/favouriteListRecyclerView"/>
+
+            <TextView
+                android:id="@+id/basecurrency_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view"
+                android:layout_marginTop="16dp"
+                android:text="@string/textview"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/currencyListRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/basecurrency_tv"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+
+                />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

@@ -9,10 +9,10 @@ import com.app.currencyscoop.R
 import com.app.currencyscoop.model.CurrencyRatesModel
 import kotlinx.android.synthetic.main.currency_rates_row.view.*
 
-class CurrencyRatesAdapter(val activity: Activity, private val addFavouritesInterface: AddFavouritesInterface):RecyclerView.Adapter<CurrencyRatesAdapter.MyViewHolder>() {
+class CurrencyRatesAdapter(val activity: Activity,val addFavouritesInterface: AddFavouritesInterface):RecyclerView.Adapter<CurrencyRatesAdapter.MyViewHolder>() {
     private var currencyList:List<CurrencyRatesModel>?=null
 
-     fun setCurrencyList(currencyList:ArrayList<CurrencyRatesModel>)
+    fun setCurrencyList(currencyList:ArrayList<CurrencyRatesModel>)
     {
         this.currencyList=currencyList
     }
@@ -20,30 +20,30 @@ class CurrencyRatesAdapter(val activity: Activity, private val addFavouritesInte
         parent: ViewGroup,
         viewType: Int
     ): CurrencyRatesAdapter.MyViewHolder {
-         val view= LayoutInflater.from(parent.context).inflate(R.layout.currency_rates_row,parent,false)
-   return MyViewHolder(view = view)
+        val view= LayoutInflater.from(parent.context).inflate(R.layout.currency_rates_row,parent,false)
+        return MyViewHolder(view = view)
     }
 
     override fun onBindViewHolder(holder: CurrencyRatesAdapter.MyViewHolder, position: Int) {
-                 holder.bind(currencyList?.get(position)!!,addFavouritesInterface)
+        holder.bind(currencyList?.get(position)!!,addFavouritesInterface)
 
     }
 
 
     override fun getItemCount(): Int {
-        if(currencyList == null) return 0
+        if(currencyList == null)return 0
         else return currencyList?.size!!
     }
 
     class MyViewHolder(view: View):RecyclerView.ViewHolder(view){
-         val currencyRates= view.currencyRatesTv
+        val currencyRates= view.currencyRatesTv
         val addFavouriteIb= view.add_fav_ib
-         fun bind(data : CurrencyRatesModel,addFavouritesInterface: AddFavouritesInterface){
-             currencyRates.text=data.rates
-             addFavouriteIb.setOnClickListener {
-                 addFavouritesInterface.onAddFavourite(data.rates)
-             }
-         }
+        fun bind(data : CurrencyRatesModel,addFavouritesInterface: AddFavouritesInterface){
+            currencyRates.text=data.rates
+            addFavouriteIb.setOnClickListener {
+                addFavouritesInterface.onAddFavourite(data.rates)
+            }
+        }
     }
 
 

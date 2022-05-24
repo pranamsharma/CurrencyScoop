@@ -29,7 +29,7 @@ class MyFavouritesFragment : Fragment() {
     lateinit var myFavouritesAdapter: MyFavouritesAdapter
 
     lateinit var views:View
-   lateinit var contexts:Context
+    lateinit var contexts:Context
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,19 +47,18 @@ class MyFavouritesFragment : Fragment() {
         initRecyclerview()
         viewModel.allFavourites.observe(viewLifecycleOwner, Observer { list ->
             list?.let {
-
                 myFavouritesAdapter.setCurrencyList(it)
             }
         })
 
-     }
+    }
 
     private fun initRecyclerview(){
         favouritesRecyclerView.layoutManager= LinearLayoutManager(activity)
         myFavouritesAdapter= MyFavouritesAdapter(contexts ,object : DeleteFavouritesInterface {
             override fun onDeleteFavourite(favouritesEntity: FavouritesEntity, position: Int) {
                 viewModel.deleteFavourites(favouritesEntity)
-               // myFavouritesAdapter!!.notifyItemRemoved(position)
+                // myFavouritesAdapter!!.notifyItemRemoved(position)
                 myFavouritesAdapter!!.notifyDataSetChanged()
                 Toast.makeText(activity, "${favouritesEntity.currencyCode} Deleted", Toast.LENGTH_SHORT).show()
 

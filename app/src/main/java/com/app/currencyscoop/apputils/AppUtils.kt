@@ -17,36 +17,21 @@ object AppUtils {
     fun alertSimple(context: Activity,title:String)
     {
         val dialogBuilder = AlertDialog.Builder(context)
-
-
         dialogBuilder.setMessage(title)
-
             .setCancelable(false)
-
             .setPositiveButton("Ok", DialogInterface.OnClickListener {
                     dialog, id -> dialog.cancel()
             })
-            // negative button text and action
-            /*.setNegativeButton("Cancel", DialogInterface.OnClickListener {
-                    dialog, id -> dialog.cancel()
-            })*/
-
         // create dialog box
         val alert = dialogBuilder.create()
-
         alert.show()
-
     }
 
     fun alertError(context: Activity,title:String,viewModel: CurrencyListViewModel)
     {
         val dialogBuilder = AlertDialog.Builder(context)
-
-
         dialogBuilder.setMessage(title)
-
             .setCancelable(false)
-
             .setPositiveButton("Retry", DialogInterface.OnClickListener {
                     dialog, id ->viewModel.makeApiCall(context,viewModel)
             })
@@ -54,23 +39,16 @@ object AppUtils {
             .setNegativeButton("Cancel", DialogInterface.OnClickListener {
                     dialog, id -> dialog.cancel()
             })
-
         // create dialog box
         val alert = dialogBuilder.create()
-
         alert.show()
-
     }
 
     fun alertErrorCurrencyRates(base_currency:String,context: Activity,title:String,viewModel: CurrencyRatesViewModel)
     {
         val dialogBuilder = AlertDialog.Builder(context)
-
-
         dialogBuilder.setMessage(title)
-
             .setCancelable(false)
-
             .setPositiveButton("Retry", DialogInterface.OnClickListener {
                     dialog, id ->viewModel.makeApiCall(base_currency,context,viewModel)
             })
@@ -78,12 +56,9 @@ object AppUtils {
             .setNegativeButton("Cancel", DialogInterface.OnClickListener {
                     dialog, id -> exitProcess(0)
             })
-
         // create dialog box
         val alert = dialogBuilder.create()
-
         alert.show()
-
     }
 
     fun internetCheck(c: Context): Boolean {
@@ -98,7 +73,6 @@ object AppUtils {
         } else {
             return cmg.activeNetworkInfo?.isConnectedOrConnecting == true
         }
-
         return false
     }
 }

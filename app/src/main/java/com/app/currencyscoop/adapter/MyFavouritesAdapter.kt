@@ -9,12 +9,13 @@ import com.app.currencyscoop.R
 import com.app.currencyscoop.roomdatabase.entity.FavouritesEntity
 import kotlinx.android.synthetic.main.currency_rates_row.view.*
 
-class MyFavouritesAdapter(val activity: Context, private val deleteFavouritesInterface: DeleteFavouritesInterface):RecyclerView.Adapter<MyFavouritesAdapter.MyViewHolder>() {
+class MyFavouritesAdapter(val activity: Context,val deleteFavouritesInterface: DeleteFavouritesInterface):RecyclerView.Adapter<MyFavouritesAdapter.MyViewHolder>() {
     private var currencyList:List<FavouritesEntity>?=null
 
-     fun setCurrencyList(currencyList:List<FavouritesEntity>)
+    fun setCurrencyList(currencyList:List<FavouritesEntity>)
     {
         this.currencyList=currencyList
+        notifyDataSetChanged()
     }
 
 
@@ -23,12 +24,12 @@ class MyFavouritesAdapter(val activity: Context, private val deleteFavouritesInt
         parent: ViewGroup,
         viewType: Int
     ): MyFavouritesAdapter.MyViewHolder {
-         val view= LayoutInflater.from(parent.context).inflate(R.layout.currency_rates_row,parent,false)
-   return MyViewHolder(view = view)
+        val view= LayoutInflater.from(parent.context).inflate(R.layout.currency_rates_row,parent,false)
+        return MyViewHolder(view = view)
     }
 
     override fun onBindViewHolder(holder: MyFavouritesAdapter.MyViewHolder, position: Int) {
-                 holder.bind(currencyList?.get(position)!!,deleteFavouritesInterface)
+        holder.bind(currencyList?.get(position)!!,deleteFavouritesInterface)
 
     }
 
@@ -39,14 +40,14 @@ class MyFavouritesAdapter(val activity: Context, private val deleteFavouritesInt
     }
 
     class MyViewHolder(view: View):RecyclerView.ViewHolder(view){
-         val currencyRates= view.currencyRatesTv
+        val currencyRates= view.currencyRatesTv
         val addFavouriteIb= view.add_fav_ib
-         fun bind(data : FavouritesEntity,deleteFavouritesInterface: DeleteFavouritesInterface){
-             currencyRates.text=data.currencyCode
-             addFavouriteIb.setOnClickListener {
-                 deleteFavouritesInterface.onDeleteFavourite(data,adapterPosition)
-             }
-         }
+        fun bind(data : FavouritesEntity,deleteFavouritesInterface: DeleteFavouritesInterface){
+            currencyRates.text=data.currencyCode
+            addFavouriteIb.setOnClickListener {
+                deleteFavouritesInterface.onDeleteFavourite(data,adapterPosition)
+            }
+        }
     }
 
 
